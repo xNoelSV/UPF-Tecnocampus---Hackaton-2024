@@ -1,3 +1,42 @@
+# Proyecto de Turismo Sostenible en las Costas de Mataró
+
+Este repositorio contiene una aplicación web que combina una API desarrollada con Java Spring y un front-end creado con Astro. El objetivo del proyecto es promover el turismo sostenible en las costas de Mataró, destacando su flora y fauna marina.
+
+## Contenido
+
+El repositorio se estructura de la siguiente manera:
+
+- `hackathonGrup6/`: Contiene el código fuente de la API desarrollada con Java Spring.
+- `FrontEnd/`: Contiene el código fuente del front-end desarrollado con Astro.
+- `WordPress/`: Contiene la parte más visual del trabajo.
+
+## Funcionalidades
+
+La aplicación ofrece las siguientes funcionalidades:
+
+- Visualización de información sobre el turismo sostenible en las costas de Mataró.
+- Descripción de la flora y fauna marina local.
+- Recomendaciones para prácticas de turismo responsable.
+- Información sobre actividades y servicios turísticos sostenibles disponibles en la zona.
+
+## Tecnologías Utilizadas
+
+- **Java Spring**: Utilizado para desarrollar la API que proporciona los datos al front-end.
+- **Astro**: Empleado para la construcción del front-end de la aplicación web.
+- **HTML, CSS, JavaScript**: Utilizados para el desarrollo del front-end.
+- **Git**: Sistema de control de versiones para el desarrollo colaborativo del proyecto.
+
+## Documentación Adicional
+
+Para obtener más información sobre el proyecto, consulta la sección que se encuentra abajo de este README.
+
+## Autor
+
+Este proyecto es mantenido por [Mataró Blue - Grupo 6].
+
+¡Gracias por tu interés en contribuir al turismo sostenible en las costas de Mataró! 🌊🐠🌿
+
+
 ![Logo Somhackathon 2024](https://github.com/SomHackathon-2024/ReadMe-Organitzacio/blob/main/logo_som24petit.png)
 
 ## Reimaginem el Turisme Intel·ligent 
