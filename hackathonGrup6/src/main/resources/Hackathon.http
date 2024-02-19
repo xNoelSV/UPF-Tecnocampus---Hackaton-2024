@@ -1,0 +1,140 @@
+### login Admin
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+ "username": "admin",
+ "password": "password123"
+}
+> {%
+ client.global.set("auth_token",
+response.headers.valueOf("Authorization"));
+ client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+### login Student
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+  "username": "Silvia",
+  "password": "password123"
+}
+> {%
+client.global.set("auth_token_1",
+response.headers.valueOf("Authorization"));
+client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+
+### login User
+POST http://localhost:8080/authenticate
+content-type: application/json
+
+{
+  "username": "Albert",
+  "password": "password123"
+}
+> {%
+    client.global.set("auth_token_3",
+        response.headers.valueOf("Authorization"));
+    client.log("token: " + response.headers.valueOf("Authorization"));
+%}
+
+
+### updateAvailability
+PATCH http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b22/availables/false
+Authorization: {{auth_token}}
+
+### getAvailableCourses
+GET http://localhost:8080/events/availables
+Authorization: {{auth_token}}
+
+### createCourse
+POST http://localhost:8080/events
+Authorization: {{auth_token}}
+content-type: application/json
+
+{
+  "title": "A-2D",
+  "description": "Animation 2D",
+  "imageURL": "HTTPS:/google.com.image/1973",
+  "publicationDate": "2023-12-09",
+  "lastUpdateDate": "2023-12-09",
+  "currentPrice": 500.0,
+  "available": true,
+  "teacherId": "teacher123"
+}
+
+
+###  getCourse
+GET http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b21
+Authorization: {{auth_token}}
+
+### updateCourse
+POST http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b20
+Authorization: {{auth_token}}
+content-type: application/json
+
+{
+  "title": "A-3D",
+  "description": "Animation 3D",
+  "imageURL": "HTTPS:/google.com.image/1976"
+}
+
+### updatePrice
+PATCH http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b20/prices/1500.0
+Authorization: {{auth_token}}
+
+### searchCourses
+GET http://localhost:8080/events/search?keyword=de
+Authorization: {{auth_token}}
+
+
+### getRecentCourses
+GET http://localhost:8080/events/recent
+Authorization: {{auth_token}}
+
+
+### updateReview
+POST http://localhost:8080/events/users/44e128a5ac7a4c9abe4c224b6bf81b30/reviews/1/updates
+Authorization: {{auth_token_2}}
+content-type: application/json
+
+{
+  "title": "Diseño de base de datos",
+  "content": "Bad",
+  "satisfaction": 2,
+  "reviewDate": "15/12/2023"
+}
+
+
+### getCourseReviews
+GET http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b20/reviews
+Authorization: {{auth_token}}
+
+
+### getStudentsFromCourse
+GET http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b20/students
+Authorization: {{auth_token}}
+
+### getAllCourses
+GET http://localhost:8080/events
+Authorization: {{auth_token}}
+
+### addReview
+POST http://localhost:8080/events/44e128a5ac7a4c9abe4c224b6bf81b21/students/44e128a5ac7a4c9abe4c224b6bf81b30/reviews
+Authorization: {{auth_token_1}}
+content-type: application/json
+
+{
+  "title": "Encantada",
+  "content": "Este curso ha sido genial!!",
+  "satisfaction": 5,
+  "reviewDate": "2023-12-15"
+}
+
+
+### getStudentCoursesWithReviews
+GET http://localhost:8080/events/students/44e128a5ac7a4c9abe4c224b6bf81b30/with-reviews
+Authorization: {{auth_token}}

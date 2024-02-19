@@ -1,0 +1,53 @@
+---
+interface Props {
+    contenido: string;
+    referencia: string;
+}
+
+const { contenido, referencia } = Astro.props;
+---
+
+<!--
+<a
+    class="flex-row justify-center text-white cursor-pointer hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100"
+>
+{contenido}
+</a> --><!--<a
+    href={referencia}
+    class="text-white p-2 w-3/12 border-2 rounded-md border-black m-2 hover:scale-110 duration-75 bg-slate-300 text-center bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800"
+>
+    {contenido}
+</a> -->
+<a href={referencia} class="m-5 hover:scale-110 duration-150 shadow-slate-50">
+    {contenido}
+</a>
+
+<style>
+    a {
+        color: #000000;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+
+        display: inline-block;
+        position: relative;
+    }
+    a:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #fff;
+        transition:
+            width 0.3s ease 0s,
+            left 0.3s ease 0s;
+        width: 0;
+    }
+    a:hover:after {
+        width: 100%;
+        left: 0;
+    }
+</style>

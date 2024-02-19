@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+    id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<Layout title="Página de Gastro" />
+
+<div class="gastro" id={id}>
+    <!-- Sección de Inicio -->
+    <div id="inicio">
+        <h2>Bienvenido a nuestra página sobre la gastronomía de Mataró</h2>
+        <p>
+            Descubre la rica tradición culinaria de nuestra ciudad, influenciada
+            por su ubicación costera.
+        </p>
+    </div>
+
+    <!-- Sección de Gastronomía -->
+    <div id="gastronomia">
+        <h2>Gastronomía de Mataró</h2>
+        <p>
+            Mataró, como ciudad costera, tiene una rica tradición culinaria
+            basada en productos frescos del mar y de la tierra. Sus platos más
+            emblemáticos incluyen:
+        </p>
+        <ul>
+            <li>- Paella de marisco</li>
+            <li>- Fideuà</li>
+            <li>- Calçots con salsa romesco</li>
+            <li>- Butifarra de pescado</li>
+            <li>- Arroz negro</li>
+        </ul>
+    </div>
+
+    <!-- Sección de Restaurantes -->
+    <div id="restaurantes">
+        <h2>Restaurantes</h2>
+        <p>
+            Aquí encontrarás algunos de los mejores restaurantes de Mataró que
+            ofrecen auténtica cocina local:
+        </p>
+        <ul>
+            <li>
+                <a href="https://www.restaurantx.com" target="_blank"
+                    >- Restaurante X</a
+                >
+            </li>
+            <li>
+                <a href="https://www.restaurantey.com" target="_blank"
+                    >- Restaurante Y</a
+                >
+            </li>
+            <li>
+                <a href="https://www.restaurantez.com" target="_blank"
+                    >- Restaurante Z</a
+                >
+            </li>
+        </ul>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta o sugerencia? Contáctanos:</p>
+        <p>Teléfono: 123-456-789</p>
+        <p>Email: info@gastrodemataro.com</p>
+    </div>
+</div>
+
+<style>
+    .gastro {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilos de cada sección */
+    .gastro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #inicio,
+    #gastronomia,
+    #restaurantes,
+    #contacto {
+        background-color: #ffffff; /* Fondo blanco para cada sección */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        padding: 30px;
+        margin-bottom: 30px;
+        width: 80%; /* Ancho máximo */
+        max-width: 800px;
+    }
+
+    /* Estilos para los enlaces de restaurantes */
+    #restaurantes a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Estilos para los elementos de lista */
+    ul {
+        list-style-type: none;
+        padding: 0;
+        padding-top: 10px;
+    }
+
+    ul li {
+        margin-bottom: 5px;
+        padding-left: 20px; /* Tabulación de 20px */
+    }
+
+    ul li::before {
+        margin-right: 5px; /* Espacio entre el guión y el texto */
+    }
+
+    /* Estilos específicos para la sección de Restaurantes */
+    #restaurantes ul li a {
+        text-decoration: none; /* Quita la decoración de enlace */
+        color: #007bff; /* Color azul para los enlaces */
+    }
+
+    #restaurantes ul li a:hover {
+        text-decoration: underline; /* Subraya el enlace al pasar el cursor sobre él */
+    }
+</style>

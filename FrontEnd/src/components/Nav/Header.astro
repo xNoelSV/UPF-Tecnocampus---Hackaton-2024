@@ -1,0 +1,32 @@
+---
+import Button from "./ButtonMenu.astro";
+---
+
+<header
+    class="bg-gradient-to-r from-slate-50 via-purple-200 to-slate-50 p-5 drop-shadow-xl"
+>
+    <nav class="flex flex-row">
+        <div class="basis-1/5">
+            <a href="/">
+                <img
+                    src="../../public/images/mataro-logo.jpg"
+                    alt="Ajuntament de Mataró"
+                    class="h-20 hover:scale-5"
+                />
+            </a>
+        </div>
+        <div
+            class="basis-3/5 flex justify-center items-center"
+        >
+            <Button
+                contenido="Inicio"
+                referencia="/"
+            />
+            <Button contenido="Actividades" referencia="Actividades" />
+            <Button
+                contenido="Mapas interactivos"
+                referencia="MapaInteractivo"
+            />
+        </div>
+    </nav>
+</header>

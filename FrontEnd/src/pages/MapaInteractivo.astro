@@ -1,0 +1,302 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+    id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<Layout title="Página de Game" />
+
+<div class="history">
+    <h1>Explora la Maravillosa Historia de la Flora Marina de Mataró</h1>
+    <p>
+        ¡Bienvenidos a Mataró, donde la magia del mar Mediterráneo cobra vida a
+        través de su espectacular flora marina! Sumérgete en un viaje fascinante
+        a través del tiempo mientras descubrimos los secretos y maravillas de
+        este vibrante ecosistema marino.
+    </p>
+    <h2>Un Tapiz de Vida Bajo las Olas</h2>
+    <p>
+        Imagina un mundo submarino lleno de colores, formas y texturas
+        sorprendentes. Desde majestuosas algas verdes hasta delicadas algas
+        rojas, pasando por los elegantes pastos marinos, la flora marina de
+        Mataró es un auténtico tesoro de la naturaleza que te dejará sin
+        aliento.
+    </p>
+    <h2>Una Historia de Cambio y Adaptación</h2>
+    <p>
+        A lo largo de los siglos, esta exuberante comunidad de plantas marinas
+        ha enfrentado desafíos y cambios constantes. Desde fluctuaciones en las
+        condiciones del agua hasta la presión humana, la flora marina de Mataró
+        ha demostrado una asombrosa capacidad para adaptarse y evolucionar.
+    </p>
+    <h2>Guardianes del Mar: Conservación y Protección</h2>
+    <p>
+        En un mundo donde la preservación del medio ambiente marino es más
+        importante que nunca, Mataró se erige como un faro de esperanza. A
+        través de iniciativas de conservación, áreas protegidas y la educación
+        ambiental, la comunidad se une para proteger y preservar este valioso
+        tesoro natural para las generaciones futuras.
+    </p>
+    <h2>Sumérgete en la Aventura</h2>
+    <p>
+        ¡Prepárate para una experiencia única mientras te adentras en las aguas
+        cristalinas de Mataró y te sumerges en un mundo de belleza y misterio!
+        Descubre la fascinante historia de la flora marina de esta encantadora
+        ciudad costera y déjate cautivar por su incomparable esplendor.
+    </p>
+</div>
+
+<div class="marine-image" id={id}>
+    <div class="dot-coral"></div>
+    <div class="coral-info info-dot">
+        <h2>Coral</h2>
+        <p>Información sobre el coral seleccionada.</p>
+    </div>
+
+    <div class="dot-algea"></div>
+    <div class="algea-info info-dot">
+        <h2>Coral2</h2>
+        <p>Información sobre el coral seleccionada.</p>
+    </div>
+
+    <div class="dot-Pez"></div>
+    <div class="pez-info info-dot">
+        <h2>Banco Pezes</h2>
+        <p>Información sobre el banco de pezes seleccionada.</p>
+    </div>
+
+    <div class="dot-roca"></div>
+    <div class="roca-info info-dot">
+        <h2>NoEsUnaRoca</h2>
+        <p>Información sobre la NoRoca seleccionada.</p>
+    </div>
+    <img
+        src="../../public/images/mapaInteractivo/FloraMarina.jpg"
+        alt="Flora marina"
+    />
+</div>
+
+<style>
+    .marine-image {
+        position: relative;
+        margin: 20px auto; /* Añade margen en la parte superior e inferior y centra horizontalmente */
+        max-width: 95%; /* Limita el ancho máximo para evitar que la imagen sea demasiado grande */
+    }
+
+    .marine-image img {
+        display: block;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto; /* Centra horizontalmente */
+    }
+
+    /*Coral Dot */
+    .coral-info {
+        display: none;
+        position: absolute;
+        width: 200px; /* Ajusta según tus necesidades */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        top: 73%;
+        left: 39.2%;
+    }
+
+    .coral-info::before {
+        content: "";
+        position: absolute;
+        top: 90px;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+    .dot-coral {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border-radius: 50%;
+        top: 86%;
+        left: 46%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        border: 2px solid white; /* Define el grosor y el color del borde */
+    }
+
+    /*Algea Dot */
+    .algea-info {
+        display: none;
+        position: absolute;
+        width: 200px; /* Ajusta según tus necesidades */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        top: 35%;
+        left: 18.2%;
+    }
+
+    .algea-info::before {
+        content: "";
+        position: absolute;
+        top: 90px;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+    .dot-algea {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 48%;
+        left: 25%;
+        background-color: black;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        border: 2px solid white; /* Define el grosor y el color del borde */
+    }
+
+    /*Pez Dot */
+    .pez-info {
+        display: none;
+        position: absolute;
+        width: 200px; /* Ajusta según tus necesidades */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        top: 14%;
+        left: 64%;
+    }
+
+    .pez-info::before {
+        content: "";
+        position: absolute;
+        top: 115px;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+    .dot-Pez {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border-radius: 50%;
+        top: 31%;
+        left: 71%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        border: 2px solid white; /* Define el grosor y el color del borde */
+    }
+
+    /*Roca Dot */
+    .roca-info {
+        display: none;
+        position: absolute;
+        width: 200px; /* Ajusta según tus necesidades */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        top: 64%;
+        left: 71.2%;
+    }
+
+    .roca-info::before {
+        content: "";
+        position: absolute;
+        top: 90px;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+    .dot-roca {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border-radius: 50%;
+        top: 77%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        border: 2px solid white; /* Define el grosor y el color del borde */
+    }
+
+    .history {
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to bottom, #bfe3e8, #a4ced3);
+        color: #333; /* Cambiado a un tono más oscuro para mayor legibilidad */
+    }
+
+    .history h1 {
+        color: #0066cc;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .history h2 {
+        color: #009933;
+        font-size: 1.5em;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .history p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .history img {
+        display: block;
+        margin-top: 30px;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dots = document.querySelectorAll(".marine-image .info-dot");
+
+        dots.forEach((dot) => {
+            const dotButton = dot.previousElementSibling as HTMLElement; // Asegurar que sea un HTMLElement
+            dotButton.addEventListener("click", () => {
+                // Ocultar todas las informaciones antes de mostrar la correcta
+                dots.forEach((info) => {
+                    (info as HTMLElement).style.display = "none"; // Asegurar que sea un HTMLElement
+                });
+                // Mostrar la información correspondiente al punto en el que se hizo clic
+                (dot as HTMLElement).style.display =
+                    (dot as HTMLElement).style.display === "none"
+                        ? "block"
+                        : "none"; // Asegurar que sea un HTMLElement
+            });
+        });
+    });
+</script>

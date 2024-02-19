@@ -1,0 +1,72 @@
+---
+import Actividad from '../components/Actividades/Actividad.astro';
+
+import Layout from '../layouts/Layout.astro';
+
+interface Props {
+    id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<Layout title="Página de Actividades">
+</Layout>
+
+
+<main id={id}>
+    <h1></h1>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-2/3">
+        <table
+            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        >
+            <thead
+                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+                <tr>
+                    <th scope="col" class="px-6 py-3">Actividad</th>
+                    <th scope="col" class="px-6 py-3">Pequeña descripción</th>
+                    <th scope="col" class="px-6 py-3">Sitio</th>
+                    <th scope="col" class="px-6 py-3">Más información</th>
+                </tr>
+            </thead>
+            <tbody>
+                <Actividad 
+                    nombre='Curso de buceo recreativo en aguas abiertas'
+                    descripcion='Alquiler de lanchas y buceo en mar abierto'
+                    sitio='Costa de Mataró'
+                    urlInformacion='url'
+                />
+                <Actividad 
+                    nombre='Snorkel en la costa de Mataró'
+                    descripcion='Snorkel entre plataformas'
+                    sitio='Calella'
+                    urlInformacion='url'
+                />
+                <Actividad 
+                    nombre='Padel surf en la costa de Mataró'
+                    descripcion='Actividad sostenible en grupo'
+                    sitio='Sant Pol'
+                    urlInformacion='url'
+                />
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<style>
+    main {
+        padding: 1rem;
+        max-width: calc(100% - 2rem);
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1em;
+    }
+</style>

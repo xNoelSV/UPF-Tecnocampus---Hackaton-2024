@@ -1,0 +1,33 @@
+---
+interface Props {
+    nombre: string;
+    descripcion: string;
+    sitio: string;
+    urlInformacion: string;
+}
+
+const { nombre, descripcion, sitio, urlInformacion } = Astro.props;
+
+---
+
+<div data-aos="flip-down">
+    <tr
+        class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+    >
+        <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+            {nombre}
+        </th>
+        <td class="px-6 py-4"> {descripcion}</td>
+        <td class="px-6 py-4"> {sitio}</td>
+        <td class="px-6 py-4">
+            <a
+                href={urlInformacion}
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >Información</a
+            >
+        </td>
+    </tr>
+</div>
